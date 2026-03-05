@@ -1,0 +1,38 @@
+.form-container {
+    width: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-section {
+    padding: 10px;
+    border: 2px solid #141414;
+    border-radius: 8px;
+    color: #141414;
+    font-size: .9rem;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: .95rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.add-button {
+    padding: 10px;
+    outline: none;
+    color: #eeeeee;
+    background-color: #5a5a5a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 250ms ease-in;
+    letter-spacing: 1px;
+    font-size: .85rem;
+    font-weight: 100;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.add-button:hover {
+    background-color: #000;;
+}

@@ -1,0 +1,30 @@
+.text-container {
+    border: 1px dashed #141414;
+    width: 90%;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+    transition: all 350ms ease-out;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.text-container:hover {
+    background-color: #141414;
+    color: #eeeeee;
+    transform: scale(1.035);
+    border: 1px dashed #eeeeee;
+}
+
+.list-text {
+    font-size: .85rem;
+}
+
+.text-container.completed {
+    background-color: #a2dd5a;
+    border: 1px solid #141414;
+    text-decoration: line-through;
+}
