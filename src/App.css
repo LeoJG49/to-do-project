@@ -41,6 +41,10 @@ h1 {
   font-size: 3rem;
 }
 
+.container {
+  width: 90%;
+}
+
 .text-todo-container {
   width: 90%;
   height: 90%;
