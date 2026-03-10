@@ -21,22 +21,25 @@ export default function Form(props) {
             completed: false,
         }
         props.onSubmit(newTodo)
+        setInput("")
         //This is a standard if the form is sent
     }
 
     return (
         <form 
-            className="form-container"    
+            className="form-container"
+            onSubmit={handleSent}
         >
             <input placeholder='Something in mind?' 
                 className='input-section'
                 type='text'
                 name='text'
                 onChange={handleChange}
+                value={input}
                 />
             <button 
                 className='add-button'
-                onSubmit={handleSent}
+                type='submit'
             >
                 New TODO 
             </button>

@@ -8,10 +8,25 @@ export default function TodoContainer() {
 
     const addTodo = todo => {
         if (todo.text.trim()) { //This declare if the input is not empty
-            todo.text = todo.text.trim();
-            const updatedTodo = [todo, ...tasks]
+            const newTodo = {
+                ...todo,
+                text: todo.text.trim()
+            };
+            const updatedTodo = [newTodo, ...tasks]
             setTodo(updatedTodo);
         }
+    }
+
+    const completeTodo = id => {
+        const updatedTasks = tasks.map(todo => 
+            todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        );
+        setTodo(updatedTasks);
+    }
+
+    const deleteTodo = id => {
+        const updatedTasks = tasks.filter(todo => todo.id !== id);
+        setTodo(updatedTasks);
     }
     
     return (
@@ -20,16 +35,20 @@ export default function TodoContainer() {
             <Form 
                 onSubmit={addTodo}
             />
-            {
-                tasks.map((todo) => 
-                    <TextList
-                        key={todo.id}
-                        id={todo.id}
-                        text={todo.text}
-                        completed={todo.completed}
-                    />
-                )
-            }
+            <div className='text-todo-container'>
+                {
+                    tasks.map((todo) => 
+                        <TextList
+                            key={todo.id}
+                            id={todo.id}
+                            text={todo.text}
+                            completed={todo.completed}
+                            completeTodo={completeTodo}
+                            deleteTodo={deleteTodo}
+                        />
+                    )
+                }
+            </div>
         </>
     )
 }
